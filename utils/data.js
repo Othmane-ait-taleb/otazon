@@ -1,7 +1,7 @@
 const data = {
     products: [
         {
-            id: 1,
+            id:"p_1",
             name: 'Free Shirt',
             category: 'Shirts',
             image: '/images/shirt1.jpg',
@@ -13,7 +13,7 @@ const data = {
             description: "A popular pants"
         },
         {
-            id: 2,
+            id: "p_2" ,
             name: 'Fit Shirt',
             category: 'Shirts',
             image: '/images/shirt2.jpg',
@@ -25,7 +25,7 @@ const data = {
             description: "A popular pants"
         },
         {
-            id: 3,
+            id:"p_3",
             name: 'Best Pant',
             category: 'Pants',
             image: '/images/pants1.jpg',
@@ -37,7 +37,7 @@ const data = {
             description: "A popular pants"
         },
         {
-            id: 4,
+            id:"p_4",
             name: 'Taine Pant',
             category: 'Pants',
             image: '/images/pants2.jpg',
@@ -49,7 +49,7 @@ const data = {
             description: "A popular pants"
         },
         {
-            id: 5,
+            id:"p_5",
             name: 'fit Pant',
             category: 'Pants',
             image: '/images/pants3.jpg',

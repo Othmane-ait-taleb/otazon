@@ -1,12 +1,14 @@
 import Head from "next/head";
 import Link from "next/link";
-import React from "react";
-
+import React, { useContext } from "react";
+import { Store } from "../utils/Store";
 type Props = {
   children: React.ReactNode;
   title: string;
 };
 export default function Layout({ title, children }: Props) {
+  const { state } = useContext(Store);
+  const { cart } = state;
   return (
     <>
       <Head>
@@ -22,7 +24,14 @@ export default function Layout({ title, children }: Props) {
               Otazon
             </Link>
             <div className="flex gap-3  font-semibold">
-              <Link href="/cart">Cart</Link>
+              <Link href="/cart">
+                Cart
+                {cart.cartItems.length > 0 && (
+                  <span className="ml-1 rounded-full bg-red-600 px-2 py-1 text-xs font-bold text-white">
+                    {cart.cartItems.reduce((a: number, c: any) => a + c.qty, 0)}
+                  </span>
+                )}
+              </Link>
               <Link href="/login">Login</Link>
             </div>
           </nav>

@@ -5,14 +5,14 @@ import { Product } from "./types";
 
 export default function ProductItem({ product }: { product: Product }) {
   return (
-    <div className="bg-green-100 m-2">
+    <div className="card">
       <Link href={`/product/${product.id}`} className="shadow-2xl">
         <Image
-          width={400}
-          height={420}
+          width={1000}
+          height={1000}
           src={product.image}
           alt={product.name}
-          className="rounded shadow"
+          className="rounded shadow w-full"
         ></Image>
       </Link>
       <div className="flex flex-col items-center justify-center p-5">
