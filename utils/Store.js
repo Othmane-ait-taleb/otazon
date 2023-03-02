@@ -17,6 +17,10 @@ function reducer(state, action) {
             : [...state.cart.cartItems, newItem];
             return { ...state, cart: { cartItems } };
         }
+        case 'CART_REMOVE_ITEM': {
+            const cartItems = state.cart.cartItems.filter(item => item.id !== action.payload.id);
+             return { ...state, cart: {cartItems } };
+        }
         default:
             return state;
     }
