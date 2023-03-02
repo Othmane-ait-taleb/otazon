@@ -53,7 +53,28 @@ export default function CartPage() {
                         </div>
                       </Link>
                     </td>
-                    <td className="p-5 text-right">{item.qty}</td>
+                    <td className="p-5 text-right">
+                      {
+                        <select
+                          value={item.qty}
+                          onChange={(e) =>
+                            dispatch({
+                              type: "CART_ADD_ITEM",
+                              payload: {
+                                ...item,
+                                qty: Number(e.target.value),
+                              },
+                            })
+                          }
+                        >
+                          {[...Array(item.countInStock).keys()].map((x) => (
+                            <option key={x + 1} value={x + 1}>
+                              {x + 1}
+                            </option>
+                          ))}
+                        </select>
+                      }
+                    </td>
                     <td className="p-5 text-right">${item.price}</td>
                     <td className="p-5 flex justify-center">
                       <button
