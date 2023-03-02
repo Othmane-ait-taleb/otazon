@@ -1,10 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import React, { useContext } from "react";
 import Layout from "../components/Layout";
 import { Store } from "../utils/Store";
 
 export default function CartPage() {
+  const router = useRouter();
   const { state, dispatch } = useContext(Store);
   const {
     cart: { cartItems },
@@ -56,7 +58,7 @@ export default function CartPage() {
                     <td className="p-5 flex justify-center">
                       <button
                         onClick={() => removeItemHandler(item)}
-                        className="flex items-center justify-center w-8 h-8 mr-1 text-gray-600 bg-gray-200 rounded-full hover:bg-gray-300"
+                        className="flex items-center justify-center w-8 h-8 mr-1 text-gray-600 border-2 rounded-full hover:bg-gray-300"
                       >
                         X
                       </button>
@@ -65,6 +67,28 @@ export default function CartPage() {
                 ))}
               </tbody>
             </table>
+          </div>
+          <div className="card p-5">
+            <ul>
+              <li>
+                <div className="pb-3">
+                  Subtotal (
+                  {cartItems.reduce((a: number, b: any) => a + b.qty, 0)}) : $
+                  {cartItems.reduce(
+                    (a: number, b: any) => a + b.price * b.qty,
+                    0
+                  )}
+                </div>
+              </li>
+              <li>
+                <button
+                  onClick={() => router.push("/shipping")}
+                  className="w-full primary-button"
+                >
+                  checkout
+                </button>
+              </li>
+            </ul>
           </div>
         </div>
       )}
