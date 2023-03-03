@@ -1,3 +1,4 @@
+import dynamic from "next/dynamic";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -5,7 +6,7 @@ import React, { useContext } from "react";
 import Layout from "../components/Layout";
 import { Store } from "../utils/Store";
 
-export default function CartPage() {
+function CartPage() {
   const router = useRouter();
   const { state, dispatch } = useContext(Store);
   const {
@@ -19,7 +20,7 @@ export default function CartPage() {
       <h1 className="mb-4 text-xl">Shopping Cart</h1>
       {cartItems.length === 0 ? (
         <div>
-          Cart is empty
+          Cart is empty.{" "}
           <Link href="/" className="text-blue-800">
             Go shopping
           </Link>
@@ -116,3 +117,4 @@ export default function CartPage() {
     </Layout>
   );
 }
+export default dynamic(() => Promise.resolve(CartPage), { ssr: false });
