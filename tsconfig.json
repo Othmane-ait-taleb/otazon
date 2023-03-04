@@ -16,6 +16,6 @@
     "jsx": "preserve",
     "incremental": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "utils/Store.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "utils/Store.js", "components/DropdownLink.jsx", ],
   "exclude": ["node_modules"]
 }
