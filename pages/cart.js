@@ -8,6 +8,7 @@ import { useRouter } from "next/router";
 import dynamic from "next/dynamic";
 import axios from "axios";
 import { toast } from "react-toastify";
+import { Promise } from "mongoose";
 
 function CartScreen() {
   const router = useRouter();
