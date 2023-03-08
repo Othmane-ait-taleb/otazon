@@ -3,7 +3,7 @@
 ![next Otazone](/public/app.jpg)
 
 
-## What you will learn
+## Technologies: 
 
 - NextJS : dynamic routing, image optimization,  SSG and SSR
 - Tailwind CSS framework to build responsive website using custom theme, animation and carousel
